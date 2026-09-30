@@ -1,0 +1,39 @@
+id: target.riscv32-qemu-virt
+architecture: rv32imafdc
+abi: ilp32d
+linker_script: linker.ld
+startup: startup.s
+memory:
+  - name: ram
+    origin: 0x80000000
+    length: 128M
+toolchain:
+  assembler: riscv-none-elf-as
+  assembler_args:
+    - -march=rv32imafdc
+    - -mabi=ilp32d
+  linker: riscv-none-elf-ld
+  linker_args:
+    - -m
+    - elf32lriscv
+  objcopy: riscv-none-elf-objcopy
+emulator:
+  executable: qemu-system-riscv32
+  args:
+    - -machine
+    - virt
+    - -cpu
+    - rv32
+    - -m
+    - 128M
+    - -bios
+    - none
+    - -display
+    - none
+    - -monitor
+    - none
+    - -serial
+    - stdio
+    - -kernel
+    - "{elf}"
+  timeout_seconds: 10

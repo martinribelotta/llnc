@@ -1,0 +1,13 @@
+[package]
+name = "llnc"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+llnc-core = { path = "../llnc-core" }
+reqwest = { workspace = true }
+serde.workspace = true
+serde_json.workspace = true
+wait-timeout = { workspace = true }

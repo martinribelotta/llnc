@@ -1,0 +1,11 @@
+project:
+  name: serial-hello
+target: ../../targets/riscv32-qemu-virt/machine.yaml
+program: program.serial-hello
+source_roots:
+  - ../../knowledge
+  - ../../targets
+  - ../../platforms/qemu-virt
+  - .
+run:
+  expected_output: "Hello from llnc!"

@@ -1,55 +1,38 @@
-# Prerequisites
-*.d
+# Rust build output
+/target/
+**/*.rs.bk
 
-# Object files
+# Generated compiler and emulator artifacts
+/artifacts/
+/runs/
 *.o
-*.ko
 *.obj
 *.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
+*.bin
 *.hex
+*.map
+*.d
+*.dump
+*.trace
+*.log
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Local model weights and caches (never commit large downloaded models)
+/.models/
+/models/
+/model-cache/
+/.local/
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Local-only configuration and credentials
+.env
+.env.*
+!.env.example
 
-# debug information files
-*.dwo
+# Local compiler state
+/.llnc/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
